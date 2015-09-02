@@ -11,5 +11,12 @@ public class prac1
 		s = s + "GT";
 
 		System.out.println(s);
+		
+		int g = 0;
+			for(int x=0; x<100; x++)
+			{
+				g = g + 2;
+			}
+		System.out.println(g);
 	}
 }
