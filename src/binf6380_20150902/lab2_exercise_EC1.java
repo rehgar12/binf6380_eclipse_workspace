@@ -7,7 +7,6 @@ public class lab2_exercise_EC1
 	public static void main(String[] args)
 	{
 		int count_of_AAA = 0;
-		String AAA = "AAA";
 		for( int y=0; y<1000; y++ )
 		{
 			String sequence = "";
