@@ -1,16 +1,28 @@
 package binf6380_20150902;
 
-import java.util.Random;
+import java.util.*;
 
 public class lab2_exercise_EC2
 {
 	public static void main(String[] args)
 	{
-		int[] sims = new int[10000];
-		for( int y=0; y<sims.length; y++ )
+		double pA = 0.12;
+		double pC = 0.38;
+		double pG = 0.39;
+		double pT = 0.11;
+
+
+		
+		
+		
+		
+		
+		
+//	iterating for 10000 simulated experiments
+		for( int y=0; y<10000; y++ )
 		{
-			int count_of_AAA = 0;
-			for( int yy=0; yy<sims.length; yy++ )
+//	iterating for 10000 simulated sequences
+			for( int yy=0; yy<10000; yy++ )
 			{
 				String sequence = "";
 				Random x = new Random();
@@ -26,14 +38,15 @@ public class lab2_exercise_EC2
 					else if (a > 0.89 && a <= 1.00)
 						sequence = sequence + "T";
 				}
-				if (sequence.equals("AAA"))
-					count_of_AAA ++;
+
+				
+				
+				
+				
+				
 //				System.out.println(sequence);
 			}
-//			System.out.println(count_of_AAA);
-			sims[y] = count_of_AAA;
+			System.out.println(y);
 		}
-		for ( int yyy=0; yyy < sims.length; yyy++ )
-			System.out.println(yyy + " " + sims[yyy]);
 	}
 }
