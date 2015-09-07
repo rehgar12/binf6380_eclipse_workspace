@@ -11,7 +11,7 @@ public class hashmap_expectedvalues
 		
 		
 		
-		//	Hashmap of all possible 3-mers of A,C,G,T (64 keys)		
+		//	Building Hashmap of all possible 3-mers of A,C,G,T (64 keys)		
 		HashMap<String, Integer> ThreeMer_expectedValues = new HashMap<>();
 		for( int b=0; b<4; b++ )
 		{
@@ -57,27 +57,87 @@ public class hashmap_expectedvalues
 		}
 //	
 		
-		
+		//	Calculating expected value for each 3-mer in the HashMap
 		//assign probabilities of each nucleotide for eValue calculations
 		double pA = 0.12;
 		double pC = 0.38;
 		double pG = 0.39;
 		double pT = 0.11;
+		double eValue = 0;
 		
 		//iterate through 64 keys, evaluate each letter of each 3-mer
 		Iterator<String> keySetIterator = ThreeMer_expectedValues.keySet().iterator();
 		while(keySetIterator.hasNext())
 		{
 			String key = keySetIterator.next();
+			System.out.println(key);
+			//splitting each key into a String array, auto-assigns index 0 = ""
+			String codonArray[] = key.split("");
 			
-			char[] codonArray = key.toCharArray();
-			double expectedValue = 0.0;
-			for( char codonchar: codonArray )
+			for( int k=0; k<codonArray.length; k++ ) 
 			{
-				if( Character.toString(codonchar).matches("A") )
+				System.out.println(codonArray[k]);
 			}
 			
+			if( codonArray[1].equals("A") );
+				eValue = pA;
+				for( int i=2; i<4; i++)
+				{
+					if( codonArray[i].equals("A") );
+						eValue *= pA;
+					if( codonArray[i].equals("C") );
+						eValue *= pC;
+					if( codonArray[i].equals("G") );
+						eValue *= pG;
+					if( codonArray[i].equals("T") );
+						eValue *= pT;
+				}
+			if( codonArray[1].equals("C") );
+				eValue = pC;
+				for( int i=2; i<4; i++)
+				{
+					if( codonArray[i].equals("A") );
+						eValue *= pA;
+					if( codonArray[i].equals("C") );
+						eValue *= pC;
+					if( codonArray[i].equals("G") );
+						eValue *= pG;
+					if( codonArray[i].equals("T") );
+						eValue *= pT;
+				}
+			if( codonArray[1].equals("G") );
+				eValue = pG;
+				for( int i=2; i<4; i++)
+				{
+					if( codonArray[i].equals("A") );
+						eValue *= pA;
+					if( codonArray[i].equals("C") );
+						eValue *= pC;
+					if( codonArray[i].equals("G") );
+						eValue *= pG;
+					if( codonArray[i].equals("T") );
+						eValue *= pT;
+				}
+			if( codonArray[1].equals("T") );
+				eValue = pT;
+				for( int i=2; i<4; i++)
+				{
+					if( codonArray[i].equals("A") );
+						eValue *= pA;
+					if( codonArray[i].equals("C") );
+						eValue *= pC;
+					if( codonArray[i].equals("G") );
+						eValue *= pG;
+					if( codonArray[i].equals("T") );
+						eValue *= pT;
+				}
+			
+
+			System.out.println(eValue);
+		
 			System.out.println("key: " + key + " value " + ThreeMer_expectedValues.get(key));
+			//RESETTING eValue!!!!!!!!!!!!!!!
+			eValue = 0;
 		}
 	
 		
