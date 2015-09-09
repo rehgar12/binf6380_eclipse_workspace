@@ -69,6 +69,7 @@ public class hashmap_expectedvalues
 		Iterator<String> keySetIterator = ThreeMer_expectedValues.keySet().iterator();
 		while(keySetIterator.hasNext())
 		{
+			eValue = 0;
 			String key = keySetIterator.next();
 			System.out.println(key);
 			//splitting each key into a String array, auto-assigns index 0 = ""
@@ -137,7 +138,7 @@ public class hashmap_expectedvalues
 		
 			System.out.println("key: " + key + " value " + ThreeMer_expectedValues.get(key));
 			//RESETTING eValue!!!!!!!!!!!!!!!
-			eValue = 0;
+			//eValue = 0;
 		}
 	
 		
