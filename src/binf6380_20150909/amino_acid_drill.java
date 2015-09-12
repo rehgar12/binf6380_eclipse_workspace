@@ -29,7 +29,8 @@ public class amino_acid_drill
 	
 	public static void main(String[] args)
 	{
-		int count = 0;
+		int rightCount = 0;
+		int wrongCount = 0;
 		//combining short and full name arrays into a hashmap
 		HashMap<String, String> aa_Hash = new HashMap<>();
 //		System.out.println(SHORT_NAMES.length);
@@ -48,8 +49,9 @@ public class amino_acid_drill
 
 		//TIMING
 		long startTime = System.currentTimeMillis();
-		long waitTime = 5000;
+		long waitTime = 30000;
 		long endTime = startTime + waitTime;
+		long elapsedTime;
 		do
 		{
 			Scanner user_input = new Scanner(System.in);
@@ -62,18 +64,22 @@ public class amino_acid_drill
 			System.out.print("What is the single letter code of: "+FULL_NAMES[rand]+"?	");
 			user_guess = user_input.next();
 			String user_guess_upper = user_guess.toUpperCase();
-
+			
+			
 			if( FULL_NAMES[rand].equals(aa_Hash.get(user_guess_upper)))
 			{
-				System.out.println("			Correct!");
-				count++;
+				rightCount++;
+				elapsedTime = (System.currentTimeMillis()-startTime)/1000;
+				System.out.println("			Correct! Score="+rightCount+" at "+elapsedTime+" seconds out of 30.");
 			}
 			else
 			{
-				System.out.println("	WRONG! The single letter code for "+FULL_NAMES[rand]+" is "+SHORT_NAMES[rand]);
+				System.out.println("You chose poorly.");
+				System.exit(0);
 			}
 		} while( System.currentTimeMillis()<endTime );
-		System.out.println(count);
+		int total = rightCount+wrongCount;
+		System.out.println("You answered "+rightCount+" correct out of"+total+".");
 	}
 }
 
