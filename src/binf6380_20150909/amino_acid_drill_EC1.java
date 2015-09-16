@@ -59,7 +59,6 @@ public class amino_acid_drill_EC1
 		Scanner user_input_time = new Scanner(System.in);
 		System.out.print("This is a program to drill your knowledge of the single letter codes for the 20 amino acids.\nHow long would you like to practice? (Enter number of seconds) ");
 		long userTime = user_input_time.nextLong();
-		
 		long startTime = System.currentTimeMillis();
 		long waitTime = userTime*1000;
 		long endTime = startTime + waitTime;
