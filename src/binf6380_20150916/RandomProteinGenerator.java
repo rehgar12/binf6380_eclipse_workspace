@@ -14,7 +14,7 @@ public class RandomProteinGenerator
 		'Y'
 	};
 	private float[] AA_FREQS = new float[AA_LETTERS.length];
-	private static final Random RANDOM = new Random();
+	private final Random RANDOM = new Random();
 
 	//constructor
 	public RandomProteinGenerator(boolean useUniformFrequencies)

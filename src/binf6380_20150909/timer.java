@@ -15,7 +15,7 @@ public class timer
 			
 			for( int i=0; i<5; i++ )
 			{
-				if( elapsedTime = i )
+//				if( elapsedTime = i )
 				{
 				System.out.println("i");
 				}
