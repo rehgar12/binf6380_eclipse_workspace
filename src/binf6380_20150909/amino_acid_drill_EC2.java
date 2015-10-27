@@ -85,7 +85,7 @@ public class amino_acid_drill_EC2
 				total = rightCount+wrongCount;
 				elapsedTime = (System.currentTimeMillis()-startTime)/1000;
 				System.out.println("	Correct! Score="+rightCount+" at "+elapsedTime+" seconds out of "+userTime+".");
-				answer_Hash.put("Question#"+total, "Amino acid prompted:	"+FULL_NAMES[rand]+".\n		You answered:		"+user_guess_upper+".\n		Result:			Correct! Score="+rightCount+" at "+elapsedTime+" seconds out of 30.");
+				answer_Hash.put("Question#"+total, "Amino acid prompted:	"+FULL_NAMES[rand]+".\n		You answered:		"+user_guess_upper+".\n		Result:			Correct! Score="+rightCount+" at "+elapsedTime+" seconds out of " + userTime + ".");
 			}
 			else
 			{
