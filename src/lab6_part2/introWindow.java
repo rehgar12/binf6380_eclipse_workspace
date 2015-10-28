@@ -2,29 +2,41 @@ package lab6_part2;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+
 
 public class introWindow extends JFrame
 {
 	private static final long serialVersionUID = -348528394792123L;
 	
 	private JTextArea instructions = new JTextArea();
-	private JTextArea practiceTime = new JTextArea();
+	private JLabel practiceTime = new JLabel();
+	private JTextField enterTime = new JTextField();
 	private JButton startButton = new JButton("Start Quiz");
 	private JButton quitButton = new JButton("Close");
 	
-	private void updateTextArea()
+	private void updateText()
 	{
 		instructions.setText("This is a quiz to drill your knowledge of the single letter codes for the 20 amino acids.\nHow long would you like to practice? (Default is 30 seconds)");
 		instructions.setLineWrap(true);
 		instructions.setEditable(false);
-		practiceTime.setText("Enter number of seconds> ");
+		
+		practiceTime.setText("Enter number of seconds:");
 		validate();
+	}
+	private JPanel getTimePanel()
+	{
+		JPanel tpanel = new JPanel();
+		tpanel.setLayout(new GridLayout(0,2));
+		tpanel.add(practiceTime);
+		tpanel.add(enterTime);
+		
+		return tpanel;
 	}
 	private JPanel getBottomPanel()
 	{
@@ -35,6 +47,7 @@ public class introWindow extends JFrame
 		
 		return bpanel;
 	}
+	
 	public introWindow(String title)
 	{
 		super(title);
@@ -45,10 +58,10 @@ public class introWindow extends JFrame
 		//adding content
 		getContentPane().setLayout(new BorderLayout());
 		getContentPane().add(instructions, BorderLayout.NORTH);
-		getContentPane().add(practiceTime, BorderLayout.CENTER);
-		getContentPane().add(getBottomPanel(), BorderLayout.SOUTH);
+		getContentPane().add(getTimePanel(), BorderLayout.CENTER);
+		getContentPane().add(getBottomPanel(), BorderLayout.SOUTH);		
 		
-		updateTextArea();
+		updateText();
 		setVisible(true);
 		//force VM to kill frame in memory
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
