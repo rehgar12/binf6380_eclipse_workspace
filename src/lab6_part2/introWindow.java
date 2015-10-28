@@ -48,6 +48,7 @@ public class introWindow extends JFrame
 		return bpanel;
 	}
 	
+	//constructor
 	public introWindow(String title)
 	{
 		super(title);

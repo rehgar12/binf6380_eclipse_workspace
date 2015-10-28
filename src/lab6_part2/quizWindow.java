@@ -19,6 +19,7 @@ public class quizWindow extends JFrame
 	private JTextField enterAnswer = new JTextField();
 	private JTextArea result = new JTextArea();
 	private JButton cancelButton = new JButton("Cancel");
+	private JLabel timer = new JLabel();
 	
 	private void updateText()
 	{
@@ -28,6 +29,14 @@ public class quizWindow extends JFrame
 		
 		validate();
 	}
+	private void updateTimer()
+	{
+		timer.setText("time remaing(s)");
+		
+		validate();
+	}
+	
+	
 	
 	private JPanel getTopPanel()
 	{
@@ -37,6 +46,14 @@ public class quizWindow extends JFrame
 		tpanel.add(enterAnswer);
 		
 		return tpanel;
+	}
+	private JPanel getBottomPanel()
+	{
+		JPanel bpanel = new JPanel();
+		bpanel.setLayout(new GridLayout(0,2));
+		bpanel.add(timer);
+		bpanel.add(cancelButton);
+		return bpanel;
 	}
 	
 	public quizWindow(String title)
@@ -49,9 +66,10 @@ public class quizWindow extends JFrame
 		getContentPane().setLayout(new BorderLayout());
 		getContentPane().add(getTopPanel(), BorderLayout.NORTH);
 		getContentPane().add(result, BorderLayout.CENTER);
-		getContentPane().add(cancelButton, BorderLayout.SOUTH);
+		getContentPane().add(getBottomPanel(), BorderLayout.SOUTH);
 		
 		updateText();
+		updateTimer();
 		setVisible(true);
 		//force VM to kill frame in memory
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
