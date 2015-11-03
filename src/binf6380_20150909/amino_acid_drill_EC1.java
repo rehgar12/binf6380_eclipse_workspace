@@ -45,13 +45,13 @@ public class amino_acid_drill_EC1
 		Iterator<String> keySetIterator = aa_Hash.keySet().iterator();
 		while(keySetIterator.hasNext())
 		{
-			String key = keySetIterator.next();
+//			String key = keySetIterator.next();
 //			System.out.println("key: " + key + " value " + aa_Hash.get(key));
 		}
 
 		
 		//hashmap for storing answers
-		HashMap<String, String> answer_Hash = new HashMap<>();
+		//HashMap<String, String> answer_Hash = new HashMap<>();
 		
 		
 		//TIMING
@@ -90,9 +90,11 @@ public class amino_acid_drill_EC1
 				wrongCount++;
 				System.out.println("	WRONG! The single letter code for "+FULL_NAMES[rand]+" is "+SHORT_NAMES[rand]);
 			}
+			user_input.close();
 		} while( System.currentTimeMillis()<endTime );
 		int total = rightCount+wrongCount;
 		System.out.println("You answered "+rightCount+" correct out of "+total+" attempted.");
+		user_input_time.close();
 	}
 }
 

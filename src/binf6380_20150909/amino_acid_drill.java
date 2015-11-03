@@ -43,7 +43,7 @@ public class amino_acid_drill
 		Iterator<String> keySetIterator = aa_Hash.keySet().iterator();
 		while(keySetIterator.hasNext())
 		{
-			String key = keySetIterator.next();
+	//		String key = keySetIterator.next();
 //			System.out.println("key: " + key + " value " + aa_Hash.get(key));
 		}
 
@@ -77,6 +77,7 @@ public class amino_acid_drill
 				System.out.println("You chose poorly.");
 				System.exit(0);
 			}
+			user_input.close();
 		} while( System.currentTimeMillis()<endTime );
 		int total = rightCount+wrongCount;
 		System.out.println("You answered "+rightCount+" correct out of"+total+".");

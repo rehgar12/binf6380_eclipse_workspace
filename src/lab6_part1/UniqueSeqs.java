@@ -1,5 +1,5 @@
 package lab6_part1;
-
+/*
 import parsers.*;
 
 import java.io.*;
@@ -11,9 +11,10 @@ import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-
+*/
 public class UniqueSeqs
 {
+	/*
 	public static void writeUnique( String inFile, File outFile ) throws Exception
 	{
 		//call FastaSequence class from parsers package
@@ -64,7 +65,7 @@ public class UniqueSeqs
 			}
 		);
 		//copying the sorted list in HashMap using LinkedHashMap to preserve insertion order
-		HashMap sortedHashMap = new LinkedHashMap();
+		LinkedHashMap sortedHashMap = new LinkedHashMap();
 		for( Iterator x = list.iterator(); x.hasNext(); )
 		{
 			Map.Entry entry = (Map.Entry)x.next();
@@ -72,7 +73,7 @@ public class UniqueSeqs
 		}
 		return sortedHashMap;
 	}
-	
+
 	public static void main(String[] args) throws Exception
 	{
 		//kept the inFile a String because the imported class from 'parsers' takes a String as an argument
@@ -80,4 +81,5 @@ public class UniqueSeqs
 		File outFile = new File("/home/playerra/Documents/UNCC_fall2015/binf6380/20151021/testlab6.outFile");
 		writeUnique(inFile, outFile);
 	}
+	*/
 }

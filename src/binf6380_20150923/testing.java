@@ -1,7 +1,9 @@
 package binf6380_20150923;
-import java.lang.*;
+
+/*
 import java.io.*;
 import java.util.*;
+*/
 
 public class testing
 {
@@ -10,6 +12,9 @@ public class testing
 	 * of Strings.
 	 * (Demonstrates Java FileReader, BufferedReader, and Java5.)
 	 */
+	
+	
+	/*
 	private List<String> readFile(String filename)
 	{
 	  List<String> records = new ArrayList<String>();
@@ -39,4 +44,7 @@ public class testing
 	{
 //		List<>
 	}
+	*/
+	
+	
 }

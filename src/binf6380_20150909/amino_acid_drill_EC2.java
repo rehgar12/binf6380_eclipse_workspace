@@ -41,7 +41,7 @@ public class amino_acid_drill_EC2
 		Iterator<String> keySetIterator = aa_Hash.keySet().iterator();
 		while(keySetIterator.hasNext())
 		{
-			String key = keySetIterator.next();
+//			String key = keySetIterator.next();
 //			System.out.println("key: " + key + " value " + aa_Hash.get(key));
 		}
 
@@ -96,6 +96,7 @@ public class amino_acid_drill_EC2
 				System.out.println("	WRONG! The single letter code for "+FULL_NAMES[rand]+" is "+SHORT_NAMES[rand]);
 				answer_Hash.put("Question#"+total, "Amino acid prompted:	"+FULL_NAMES[rand]+".\n		You answered:		"+user_guess_upper+".\n		Result:			WRONG! The single letter code for "+FULL_NAMES[rand]+" is "+SHORT_NAMES[rand]+".");
 			}
+			user_input.close();
 		} while( System.currentTimeMillis()<endTime );
 		System.out.println("\nSUMMARY REPORT\nYou answered "+rightCount+" correct out of "+total+" attempted.");
 		//REPORT
@@ -107,6 +108,7 @@ public class amino_acid_drill_EC2
 		{
 			System.out.println(key2+"	"+answer_Hash.get(key2));
 		}
+		user_input_time.close();
 	}
 }
 

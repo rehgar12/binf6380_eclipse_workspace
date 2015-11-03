@@ -111,9 +111,9 @@ public class FastaSequence
 			System.out.println(fs);
 			
 			
-			System.out.println(fs.getHeader());
-			System.out.println(fs.getSequence());
-			System.out.println(fs.getGCRatio());
+//			System.out.println(fs.getHeader());
+	//		System.out.println(fs.getSequence());
+		//	System.out.println(fs.getGCRatio());
 		}
 
 

@@ -6,11 +6,11 @@ public class lab2_exercise_EC2
 {
 	public static void main(String[] args)
 	{
-		double pA = 0.12;
+	/*	double pA = 0.12;
 		double pC = 0.38;
 		double pG = 0.39;
 		double pT = 0.11;
-
+*/
 
 		
 		

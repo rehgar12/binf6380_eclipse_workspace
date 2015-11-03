@@ -1,8 +1,13 @@
 package Shape;
+
+
 import java.io.*;
 import java.util.*;
+
+/*
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+*/
 
 public class FastaSequence
 {
@@ -28,12 +33,12 @@ public class FastaSequence
 		
 		String line = reader.readLine();
 		String header = line;
-		
+	/*
 		if( ! header.startsWith(">"))
 		{
 			throw new Exception("Not a fasta");
 		}
-		
+	*/
 		while( line != null)
 		{	
 			line = reader.readLine();
